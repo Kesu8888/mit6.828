@@ -3,7 +3,7 @@
 
 ## Exercise: What is on the stack?
 
-###1. Begin by restarting qemu and gdb, and set a break-point at 0x7c00, the start of the boot block (bootasm.S). Single step through the instructions (type si at the gdb prompt). Where in bootasm.S is the stack pointer initialized? (Single step until you see an instruction that moves a value into %esp, the register for the stack pointer.)
+### 1. Begin by restarting qemu and gdb, and set a break-point at 0x7c00, the start of the boot block (bootasm.S). Single step through the instructions (type si at the gdb prompt). Where in bootasm.S is the stack pointer initialized? (Single step until you see an instruction that moves a value into %esp, the register for the stack pointer.)
 
 We can just search for keyword esp in bootasm.S. The first result shows the initialization of esp after setting up the protected-mode data segment registers. In this step, the value of esp is setting to 7c00.
 
@@ -13,7 +13,7 @@ We can just search for keyword esp in bootasm.S. The first result shows the init
   movl    $start, %esp
     7c43:	bc 00 7c 00 00       	mov    $0x7c00,%esp
 
-###2. Single step through the call to bootmain; what is on the stack now?
+### 2. Single step through the call to bootmain; what is on the stack now?
 
 - Right before calling bootmain, the esp is still at 7c00(initial point)
 The target architecture is set to "i386".
@@ -33,7 +33,7 @@ $2 = (void *) 0x7bfc
 (gdb) x/2x $esp
 0x7bfc:	0x00007c4d	0x8ec031fa
 
-###3. What do the first assembly instructions of bootmain do to the stack? Look for bootmain in bootblock.asm.
+### 3. What do the first assembly instructions of bootmain do to the stack? Look for bootmain in bootblock.asm.
 
 The first assembly instuction of bootmain is pushing the ebp.
 void
@@ -49,7 +49,7 @@ $3 = (void *) 0x7bf8
 0x00007c4d	return addr of bootmain()
 0x8ec031fa	initial point of stack pointer
 
-###4. Continue tracing via gdb (using breakpoints if necessary -- see hint below) and look for the call that changes eip to 0x10000c. What does that call do to the stack? (Hint: Think about what this call is trying to accomplish in the boot sequence and try to identify this point in bootmain.c, and the corresponding instruction in the bootmain code in bootblock.asm. This might help you set suitable breakpoints to speed things up.)
+### 4. Continue tracing via gdb (using breakpoints if necessary -- see hint below) and look for the call that changes eip to 0x10000c. What does that call do to the stack? (Hint: Think about what this call is trying to accomplish in the boot sequence and try to identify this point in bootmain.c, and the corresponding instruction in the bootmain code in bootblock.asm. This might help you set suitable breakpoints to speed things up.)
 
 Firstly, we cannot find step address 0x10000c in bootblock.asm which means 0x10000c might not exist in bootmain.c and it is in another file that gets called by bootmain.c. Hence, it could be the entry() that gets called at the end of the bootmain function. From bootlock.asm, we can see that the step address of entry() is at 7db2 so we make a breakpoint here and continue to this point.
 (gdb) b *0x7db2
