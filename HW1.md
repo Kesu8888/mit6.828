@@ -8,8 +8,8 @@
 We can just search for keyword esp in bootasm.S. The first result shows the initialization of esp after setting up the protected-mode data segment registers. In this step, the value of esp is setting to 7c00.
 
 .code32  # Tell assembler to generate 32-bit code now.
-  # Set up the protected-mode data segment registers
-  # Set up the stack pointer and call into C.
+ /# Set up the protected-mode data segment registers
+ /# Set up the stack pointer and call into C.
   movl    $start, %esp
     7c43:	bc 00 7c 00 00       	mov    $0x7c00,%esp
 
