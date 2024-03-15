@@ -1,0 +1,7 @@
+a.out
+ls.txt
+Main
+Main.c
+sh
+sh.c
+t.sh
