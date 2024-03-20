@@ -1,0 +1,83 @@
+Protection
+five aspects of protections
+1. TYpe checking
+2. Limit checking
+3. Restriction of addressable domain
+4. Restriction of procedure entry points
+5. Restriction of instruction set
+
+Segment: The segment is the unit of protection, and segment descriptors stores protection parameters. Protection checks are performsed automatically by the CPU when the selector of a segment descriptor is loaqed into a segment register and with every segment access. Segment registers hold the protection parameters of the currently addressabnle segments.
+
+====================================================
+| Base 31...24 |G|B|L|a|limit|p|D|TYPE |BASE 23-16 |
+|              | | | |v|19~16| |P|10CRA|           |
+|              | | | |l|     | |L|     |           |
+====================================================
+Type field of descriptor 
+
+6.1. Type checking
+Type checking can be used to detect programming errors that would attempt
+to use segments in ways not intended by the programmer. The processor
+examines type information on two kinds of occasions:
+1.When a selector of a descriptor is loaded into a segment register.
+Certain segment registers can contain only certain descriptor types;
+for example:
+-The CS register can be loaded only with a selector of an executable
+segment.
+-Selectors of executable segments that are not readable cannot be
+loaded into data-segment registers.
+-Only selectors of writable data segments can be loaded into SS.
+2.When an instruction refers (implicitly or explicitly) to a segment
+register. Certain segments can be used by instructions only in certain
+predefined ways; for example:
+-No instruction may write into an executable segment.
+-No instruction may write into a data segment if the writable bit is
+not set.
+-No instruction may read an executable segment unless the readable bit
+is set.
+
+System and Gate descriptor types 
+Code                                Type of Segment or Gate
+0                                   -reserved
+1                                   Available 286 TSS
+2                                   LDT
+3                                   Busy 286 TSS
+4                                   Call Gate
+5                                   Task Gate
+6                                   286 Interrupt Gate
+7                                   286 Trap Gate
+8                                   -reserved
+9                                   Available 386 TSS
+A                                   -reserved
+B                                   Busy 386 TSS
+C                                   386 Call Gate
+D                                   -reserved
+E                                   386 Interrupt Gate
+F                                   386 Trap Gate
+
+6.2. Limit checking
+The limit field of a segment descriptor is used by the processor to prevent programs from addressing outside the segment. The processor's interpretation of the limit depends on the setting of the G(Granularity) bit.
+When G = 0: limit range from 0 to 0xFFFFF(2^20 - 1 or 1 megabyte)
+When G = 1: Limit range from 0xFFF(2^12 - 1) to 0xFFFFFFFF(2^32 - 1 or 4 gigabytes)
+
+For all types of segments except expand-down data segments, the value of
+the limit is one less than the size (expressed in bytes) of the segment. The
+processor causes a general-protection exception in any of these cases:
+-Attempt to access a memory byte at an address > limit.
+-Attempt to access a memory word at an address ≥limit.
+-Attempt to access a memory doubleword at an address ≥(limit-2).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

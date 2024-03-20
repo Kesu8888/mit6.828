@@ -12,6 +12,7 @@
 struct gatedesc idt[256];
 extern uint vectors[];  // in vectors.S: array of 256 entry pointers
 struct spinlock tickslock;
+int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm);
 uint ticks;
 
 void
@@ -86,6 +87,34 @@ trap(struct trapframe *tf)
               tf->trapno, cpuid(), tf->eip, rcr2());
       panic("trap");
     }
+    /*if (tf->trapno == T_PGFLT) {
+        uint oldsz, newsz, a;
+        char *mem;
+        struct proc *curproc = myproc();
+        newsz = rcr2();
+        oldsz = PGROUNDDOWN(newsz);
+
+        a = PGROUNDUP(oldsz);
+        for(; a < newsz; a += PGSIZE){
+            mem = kalloc();
+            if(mem == 0){
+                cprintf("lazy page allocation out of memory\n");
+                deallocuvm(curproc->pgdir, newsz, oldsz);
+                return;
+            }
+            memset(mem, 0, PGSIZE);
+            if(mappages(curproc->pgdir, (char*)a, PGSIZE, V2P(mem), PTE_W|PTE_U) < 0){
+                cprintf("lazy page allocation out of memory (2)\n");
+                deallocuvm(curproc->pgdir, newsz, oldsz);
+                kfree(mem);
+                return;
+            }
+        }
+        return;
+    }*/
+    if (pageFaultAlloc(tf->trapno, rcr2()) == 1) {
+        return;
+    }
     // In user space, assume process misbehaved.
     cprintf("pid %d %s: trap %d err %d on cpu %d "
             "eip 0x%x addr 0x%x--kill proc\n",
@@ -109,4 +138,36 @@ trap(struct trapframe *tf)
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
     exit();
+}
+
+int
+pageFaultAlloc(uint trap_no, uint faultVA)
+{
+    if (trap_no == T_PGFLT) {
+        cprintf("Page fault occurs\n");
+        uint oldsz, newsz, a;
+        char *mem;
+        struct proc *curproc = myproc();
+        newsz = faultVA;
+        oldsz = PGROUNDDOWN(newsz);
+
+        a = PGROUNDUP(oldsz);
+        //for(; a < newsz; a += PGSIZE){
+            mem = kalloc();
+            if(mem == 0){
+                cprintf("lazy page allocation out of memory\n");
+                deallocuvm(curproc->pgdir, newsz, oldsz);
+                return 0;
+            }
+            memset(mem, 0, PGSIZE);
+            if(mappages(curproc->pgdir, (char*)a, PGSIZE, V2P(mem), PTE_W|PTE_U) < 0){
+                cprintf("lazy page allocation out of memory (2)\n");
+                deallocuvm(curproc->pgdir, newsz, oldsz);
+                kfree(mem);
+                return 0;
+            }
+        //}
+        return 1;
+    }
+    return 0;
 }

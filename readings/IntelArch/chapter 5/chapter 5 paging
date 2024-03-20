@@ -1,0 +1,49 @@
+Granularity bit: Specifies the units with which the LIMIT field is
+interpreted. When thebit is clear, the limit is interpreted in units of one
+byte; when set, the limit is interpreted in units of 4 Kilobytes
+
+DPL (Descriptor privilege level): Used by the protection mechanism
+
+segment-present bit: If this bit is zero, the descriptor is not valid for
+use in address transformation; the processor will signal an exception when a
+selector for the descriptor is loaded into a segment register. Operating 
+systems that implement segment-based virtual memory clear the present bit in 
+either of these cases:
+- When the linear space spanned by the segment is not mapped by the paging
+mechanism
+- When the segment is not present in memory
+
+Accessed bit: The processor sets this bit when the segment is accessed;
+i.e., a selector for the descriptor is loaded into a segment register or
+used by a selector test instruction. Operating systems that implement
+virtual memory at the segment level may, by periodically testing and
+clearing this bit, monitor frequency of segment usage.
+
+Two types of Descriptor tables
+1. The global Descriptor table (GDT)
+LGDT and SGDT instructions give access to GDTR(GDT register)
+
+2. A local Descriptor table (LDT)
+LLDT and SLDT instructions give access to LDTR(LDR register)
+
+Index: Selects one of 8192 descriptors in a descriptor table. The processor
+simply multiplies this index value by 8 (the length of a descriptor), and
+adds the result to the base address of the descriptor table in order to
+access the appropriate segment descriptor in the table.
+
+Table Indicator: Zero Indicate GDT, one indicate LDT
+
+Requested Privilege level: Used by the protection mechanism.
+==========================
+|    INDEX     |TI| RPL  |
+==========================
+
+Informations of the descriptor are stored in segment registers(e.g., CS, SS DS, ES, FS, GS) These registers are stored in two types of program instructions
+1. Direct load instructions: MOV, POP, LDS, LSS, LFS
+2. Implied load instructions: CALL, JMP
+Because most instructions refer to data in segments whose selectors have
+already been loaded into segment registers, the processor can add the
+segment-relative offset supplied by the instruction to the segment base
+address with no additional overhead.
+
+

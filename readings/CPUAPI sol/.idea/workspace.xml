@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7eb56bcb-c0c2-4ebc-9b90-5912a6f9a9d1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../lab1_" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/GNUmakefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/GNUmakefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/kern/entry.S" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/kern/entry.S" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/kern/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/kern/init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/kern/kdebug.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/kern/kdebug.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/kern/monitor.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/kern/monitor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab1_/lib/printfmt.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab1_/lib/printfmt.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2boDipfKXsleyW7s01MZkcUauIA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake Application.CPUAPI_sol.executor": "Run",
+    "CMake Application.main.executor": "Run",
+    "CMake Application.q3.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "cs134",
+    "last_opened_file_path": "/home/peterill/Documents/cs134/lab",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.CPUAPI_sol">
+    <configuration name="CPUAPI_sol" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPUAPI_sol" TARGET_NAME="CPUAPI_sol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPUAPI_sol" RUN_TARGET_NAME="CPUAPI_sol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="CPUAPI_sol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="CPUAPI_sol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPUAPI_sol" TARGET_NAME="CPUAPI_sol" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPUAPI_sol" RUN_TARGET_NAME="CPUAPI_sol">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eb56bcb-c0c2-4ebc-9b90-5912a6f9a9d1" name="Changes" comment="" />
+      <created>1706872667799</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706872667799</updated>
+      <workItem from="1706872668797" duration="9463000" />
+      <workItem from="1706949481771" duration="1441000" />
+      <workItem from="1707049896814" duration="6000000" />
+      <workItem from="1707110653646" duration="4645000" />
+      <workItem from="1707115306228" duration="2280000" />
+      <workItem from="1707126292148" duration="8178000" />
+      <workItem from="1707199998507" duration="227000" />
+      <workItem from="1707227472950" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>

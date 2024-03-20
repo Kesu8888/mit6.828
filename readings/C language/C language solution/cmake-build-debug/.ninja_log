@@ -1,0 +1,25 @@
+# ninja log v5
+0	200	1706706099041803055	CMakeFiles/C_language_solution.dir/chapter_2/library.cpp.o	7926d9a745e3c037
+1	19	1707309020197021321	CMakeFiles/C_language_solution.dir/chapter_2/chapter2_9.cpp.o	6c1cc9e9b092ac4f
+1	20	1707309020197021321	CMakeFiles/C_language_solution.dir/chapter_5/chapter5_5.cpp.o	aa475cc4f93f6865
+1	27	1707309020205020962	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+1	208	1707309020385012886	CMakeFiles/C_language_solution.dir/chapter_2/library.cpp.o	c1c457cc59519351
+208	265	1707309020441010373	C_language_solution	fc3eece7e9f7660b
+0	21	1707389118544404336	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+21	72	1707389118592403981	C_language_solution	fc3eece7e9f7660b
+0	21	1707389184379918108	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+21	73	1707389184427917757	C_language_solution	fc3eece7e9f7660b
+1	22	1707389190303874568	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+22	78	1707389190359874156	C_language_solution	fc3eece7e9f7660b
+0	20	1707389202207787132	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+20	73	1707389202255786780	C_language_solution	fc3eece7e9f7660b
+0	21	1707389207299749770	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+21	74	1707389207351749388	C_language_solution	fc3eece7e9f7660b
+1	32	1707390267520223491	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+32	88	1707390267584232725	C_language_solution	fc3eece7e9f7660b
+0	24	1707485179626787842	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+24	84	1707485179686786862	C_language_solution	fc3eece7e9f7660b
+1	35	1707485229317966953	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+35	98	1707485229385965816	C_language_solution	fc3eece7e9f7660b
+1	25	1707485247421663120	CMakeFiles/C_language_solution.dir/chapter_5/Main.cpp.o	8a784c6537b3b5ab
+25	95	1707485247489661973	C_language_solution	fc3eece7e9f7660b

@@ -1,0 +1,3 @@
+/home/peterill/Documents/cs134/readings/C language/C language solution/cmake-build-debug/CMakeFiles/C_language_solution.dir
+/home/peterill/Documents/cs134/readings/C language/C language solution/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/peterill/Documents/cs134/readings/C language/C language solution/cmake-build-debug/CMakeFiles/rebuild_cache.dir
